@@ -1,0 +1,108 @@
+body{
+margin:0px;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+/* background-color: #111; */
+background: url("backgroundimg.png") no-repeat center center/cover;
+
+font-family: 'Times New Roman', Times, serif;
+color: white;
+}
+
+body::before{
+    content:"";
+    position: fixed;
+    inset:0;
+    background: inherit;
+    filter:blur(2px);
+    z-index: -1;
+
+}
+
+.container{
+    position: relative;
+    height:55vh;
+    width: 45vw;
+    
+    padding: 3px;
+    border-radius: 13px;
+    overflow: hidden;
+    background-color: #222;
+    box-shadow: 0 0 2px #000;
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.container::before{
+    content: "";
+    position:absolute;
+    inset: -200%;
+    background: linear-gradient(
+        45deg,
+        black,gold,red, orange, yellow, cyan, lime,blue, violet, red,violet,brown);
+        animation: rotateColors 6s linear infinite;
+        z-index: 0;
+        
+    }
+    
+    .login-box{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+
+    padding: 40px;
+    height: 34vh;
+    position: relative;
+    width: 400px;
+    border-radius: 13px;
+    z-index: 1;
+    text-align: center;
+    color: white;
+}
+
+input,button{
+    width: 100%;
+    padding: 2px;
+    margin: 2px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+
+}
+
+input:focus{
+    border: 2px solid #4CAF50;
+
+}
+
+button{
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+
+}
+button:hover{
+    transform: scale(1.05);
+    background-color: lime;
+}
+.btn{
+    margin-top: 23px;
+    padding: 2px;
+    background-color: aqua;
+}
+
+@keyframes rotateColors{
+    0%  {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+
+
